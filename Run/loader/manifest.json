@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "version": "1.0",
-    "name": "Pipille",
+    "name": "Pipille!!",
     "description": "Jay & Viv extension.",
     "permissions": [
         "webRequest",
@@ -22,5 +22,6 @@
                 "assets/js/inject.js"
             ]
         }
-    ]
+    ],
+    "icons": {"48": "icon48.png"}
 }
