@@ -133,7 +133,7 @@ function drawMinimap() {
 
 				var txt = 10 * (y +1) + x + 1;
 				var txtW = minimapCtx.measureText(txt).width;
-				var txtH = parseInt(minimapCtx.font);
+				var txtH = txtW * 1.5;
 				minimapCtx.fillText(txt,
 				x * step + step * 0.5 - txtW * 0.5,
 				y * step + step * 0.5 + txtH * 0.7 * 0.5);
