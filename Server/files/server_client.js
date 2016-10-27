@@ -112,6 +112,37 @@ function drawMinimap() {
     minimapCtx.globalAlpha = 0.4;
     minimapCtx.fillStyle = "#000000";
     minimapCtx.fillRect(0, 0, miniMap.width, miniMap.height);
+
+	var subDiv = 7;
+	var step = 200/subDiv;
+	minimapCtx.beginPath();
+	
+	for (x = 0; x < subDiv +1; x++) 
+	{ 
+	    minimapCtx.moveTo(x * step, 0);
+	    minimapCtx.lineTo(x * step, 200);
+	    minimapCtx.moveTo(0, x * step);
+	    minimapCtx.lineTo(200, x * step);
+
+		if ( x < subDiv)
+		{
+			for (y = 0; y < subDiv; y++) 
+			{ 
+				minimapCtx.font="15pt Arial";
+				minimapCtx.fillStyle="#FFFF00";
+
+				var txt = 10 * (y +1) + x + 1;
+				var txtW = minimapCtx.measureText(txt).width;
+				var txtH = parseInt(minimapCtx.font);
+				minimapCtx.fillText(txt,
+				x * step + step * 0.5 - txtW * 0.5,
+				y * step + step * 0.5 + txtH * 0.7 * 0.5);
+			}
+		}
+	}
+	minimapCtx.strokeStyle="#FFFF00";
+	minimapCtx.stroke();
+
     var a = 200 / BotMega.mapSize;
     var b = 200 / BotMega.mapSize;
     minimapCtx.globalAlpha = 1;
