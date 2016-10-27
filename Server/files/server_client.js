@@ -836,8 +836,8 @@ window.BotMega = {
       }
     });
     addBallToMinimap(true, "player_pointer", BotMega.playerName, BotMega.realPlayerX, BotMega.realPlayerY, "#00FF00", false);
-    addBallToMinimap(true, "player_death", "Last Death", BotMega.realPlayerX, BotMega.realPlayerY, "#FF2400", false);
-    addBallToMinimap(true, "player_spectate", "Spectate", BotMega.realPlayerX, BotMega.realPlayerY, "#0000FF", false);
+    addBallToMinimap(true, "player_death", "Death2", BotMega.realPlayerX, BotMega.realPlayerY, "#FF2400", false);
+    addBallToMinimap(true, "player_spectate", "Spectate2", BotMega.realPlayerX, BotMega.realPlayerY, "#0000FF", false);
     connectToBotMegaServer();
     insertCore();
     setInterval(function() {
