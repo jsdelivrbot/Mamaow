@@ -123,6 +123,20 @@ function drawMinimap() {
 	    minimapCtx.lineTo(x * step, 200);
 	    minimapCtx.moveTo(0, x * step);
 	    minimapCtx.lineTo(200, x * step);
+
+        if ( x < subDiv)
+        {
+            for (y = 0; y < subDiv; y++) 
+            { 
+                minimapCtx.font="15pt Arial";
+                minimapCtx.strokeStyle="#FFFF00";
+
+                var txt = 10 * (y +1) + x + 1;
+                var txtW = minimapCtx.measureText(txt).width;
+                var txtH = txtW * 1.5;
+                minimapCtx.strokeText(txt, x * step + step * 0.5 - txtW * 0.5, y * step + step * 0.5 + txtH * 0.7 * 0.5);
+            }
+        }	   
 	}
 	minimapCtx.strokeStyle="#FFFF00";
 	minimapCtx.stroke();
@@ -950,7 +964,7 @@ b.open("GET", "/mc/agario.js", true), b.onload = function() {
     a = replaceRegexFile(a, /<div id="adsBottom".*display:block;">/i, '<div id="adsBottom" style="display:none">');
     a = replaceNormalFile(a, '<div class="diep-cross" style="', '<div class="diep-cross" style="display:none;');
     a = replaceNormalFile(a, '<div id="promo-badge-container">', '<div id="promo-badge-container" style="display:none;">');
-    a = replaceNormalFile(a, '<span data-itr="page_instructions_w"></span><br/>', '<span data-itr="page_instructions_w"></span><br/><span>Press <b>QQQQ</b> to double split</span><br><span>Hold <b>W</b> to rapid fire mass</span><br><span>Press <b>M</b> to hide/show the minimap</span><br><span>Press <b>E</b> to split bots</span><br><span>Press <b>R</b> to eject some bots mass</span><br><span>Press <b>P</b> to make bots collect pellets</span>');
+    a = replaceNormalFile(a, '<span data-itr="page_instructions_w"></span><br/>', '<span data-itr="page_instructions_w"></span><br/><span>Press <b>QAAQ</b> to double split</span><br><span>Hold <b>W</b> to rapid fire mass</span><br><span>Press <b>M</b> to hide/show the minimap</span><br><span>Press <b>E</b> to split bots</span><br><span>Press <b>R</b> to eject some bots mass</span><br><span>Press <b>P</b> to make bots collect pellets</span>');
     a = replaceNormalFile(a, '<div id="tags-container">', '<div id="leaders" class="input-group" style="margin-top: 6px;"><span class="input-group-addon" style="width:75px"id="basic-addon1">BOARD</span><input id="leaderboard" type="text" value="" style="width:185px" readonly class="form-control"><button id="leaderboardcopy" class="btn btn-primary" style="float: right; width: 60px; border-radius: 0px 4px 4px 0px;" data-original-title="" title="">Copy</button></div><div class="input-group" style="margin-top: 6px;"><span class="input-group-addon" style="width:75px"id="basic-addon1">UUID</span><input id="uuid" type="text" value="' + 
     client_uuid + '" style="width:185px" readonly class="form-control"><button id="uuidcopy" class="btn btn-primary" style="float: right; width: 60px; border-radius: 0px 4px 4px 0px;" data-original-title="" title="">Copy</button></div><div class="input-group" style="margin-top: 6px;"><span class="input-group-addon" style="width:75px" id="basic-addon1">NAMES</span><input id="botnames" class="form-control" style="width:245px" placeholder="Separate bot names using commas" autofocus=""></div><div id="tags-container">');
     a = replaceNormalFile(a, "</body>", '<div style="display:block;position:absolute;z-index:100;pointer-events:none;right:9px;bottom:9px;"><canvas id="minimap"></div></body>');
