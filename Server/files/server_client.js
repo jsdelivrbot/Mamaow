@@ -132,7 +132,7 @@ function drawMinimap() {
                 minimapCtx.strokeStyle="#FFFF00";
 
                 var txt = 10 * (y +1) + x + 1;
-                var txtW = minimapCtx.measureText(txt).width;
+                var txtW = 0; //minimapCtx.measureText(txt).width;
                 var txtH = txtW * 1.5;
                 minimapCtx.strokeText(txt, x * step + (step - txtW) * 0.5, y * step + (step + txtH) * 0.5);
             }
