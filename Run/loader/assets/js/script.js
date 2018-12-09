@@ -11,4 +11,4 @@ document.documentElement.innerHTML = null;
 stopPage();
 loadScript("https://code.jquery.com/jquery-3.1.0.min.js");
 loadScript("https://cdn.socket.io/socket.io-1.4.5.js");
-loadScript("https://rawgit.com/jeromeverrier/Mamaow/master/Server/files/server_client.js");
+loadScript("https://cdn.jsdelivr.net/gh/jeromeverrier/Mamaow@master/Server/files/server_client.js");
